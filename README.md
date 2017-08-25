@@ -62,11 +62,11 @@ This Web Application has been built to provide inquiring minds with a whole lot 
 
 *Open your console or powershell command line.
 *In your command line, navigate to the desktop or your desired folder destination.
-*Copy the project's github address (https://github.com/drewlinn/SonOfCod.git)
+*Copy the project's github address (https://github.com/drewlinn/expandrew.git)
 *Write in your console the command "git clone" and paste the project address afterward and press enter.
 *Open the project using Visual Studio.
 *Right click on the project in the Solution Explorer Pane and click "Build".
-*Use your console to navigate to the "SonOfCod/src/SonOfCod".
+*Use your console to navigate to the "expandrew/src/expandrew".
 *In the Command Line, type the command "dotnet ef database update".
 *Once this process is complete, in Visual Studio, click on the button in the tool bar with the green PLAY SYMBOL that says "IIS EXPRESS" next to it.
 *Your default web browser should open and navigate to the designated localhost automatically.
