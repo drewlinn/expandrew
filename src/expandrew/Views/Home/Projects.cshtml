@@ -1,0 +1,19 @@
+﻿@model IEnumerable<expandrew.Models.Project>
+
+<h2>All Projects</h2>
+<hr />
+<ol>
+    @foreach (var project in Model)
+    {
+        <li>
+            <ul>
+                <li>Name: @Html.DisplayFor(modelItem => project.Name)</li>
+                <li>Description: @Html.DisplayFor(modelItem => project.Description)</li>
+                <li>URL: @Html.DisplayFor(modelItem => project.Url)</li>
+                <li>Stars: @Html.DisplayFor(modelItem => project.Stars)</li>
+            </ul>
+        </li>
+    }
+</ol>
+
+@Html.ActionLink("Back home", "Index")

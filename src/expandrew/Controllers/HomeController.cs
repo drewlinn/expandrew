@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using expandrew.Models;
 
 namespace expandrew.Controllers
 {
@@ -11,6 +12,11 @@ namespace expandrew.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+        public IActionResult Projects()
+        {
+            var allProjects = Project.GetProjects();
+            return View(allProjects);
         }
 
         public IActionResult About()
