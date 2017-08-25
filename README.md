@@ -11,41 +11,44 @@ This Web Application has been built to provide inquiring minds with a whole lot 
 ## Planning
 
 1. Configuration/dependencies
-  "Microsoft.NETCore.App": {
-      "version": "1.0.1",
-      "type": "platform"
-    },
-    "Microsoft.ApplicationInsights.AspNetCore": "1.0.0",
-    "Microsoft.AspNetCore.Diagnostics": "1.0.0",
-    "Microsoft.AspNetCore.Mvc": "1.0.1",
-    "Microsoft.AspNetCore.Razor.Tools": {
-      "version": "1.0.0-preview2-final",
-      "type": "build"
-    },
-    "Microsoft.AspNetCore.Routing": "1.0.1",
-    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0",
-    "Microsoft.AspNetCore.Server.Kestrel": "1.0.1",
-    "Microsoft.AspNetCore.StaticFiles": "1.0.0",
-    "Microsoft.Extensions.Configuration.EnvironmentVariables": "1.0.0",
-    "Microsoft.Extensions.Configuration.Json": "1.0.0",
-    "Microsoft.Extensions.Logging": "1.0.0",
-    "Microsoft.Extensions.Logging.Console": "1.0.0",
-    "Microsoft.Extensions.Logging.Debug": "1.0.0",
-    "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0"
+	*Microsoft.NETCore.App: 1.0.1
+	*Microsoft.ApplicationInsights.AspNetCore: 1.0.0,
+	*Microsoft.AspNetCore.Diagnostics: 1.0.0,
+	*Microsoft.AspNetCore.Mvc: 1.0.1,
+	*Microsoft.AspNetCore.Razor.Tools: 1.0.0-preview2-final
+	*Microsoft.AspNetCore.Routing: 1.0.1,
+	*Microsoft.AspNetCore.Server.IISIntegration: 1.0.0,
+	*Microsoft.AspNetCore.Server.Kestrel: 1.0.1,
+	*Microsoft.AspNetCore.StaticFiles: 1.0.0,
+	*Microsoft.Extensions.Configuration.EnvironmentVariables: 1.0.0,
+	*Microsoft.Extensions.Configuration.Json: 1.0.0,
+	*Microsoft.Extensions.Logging: 1.0.0,
+	*Microsoft.Extensions.Logging.Console: 1.0.0,
+	*Microsoft.Extensions.Logging.Debug: 1.0.0,
+	*Microsoft.Extensions.Options.ConfigurationExtensions: 1.0.0,
+	*Microsoft.VisualStudio.Web.BrowserLink.Loader: 14.0.0
 
 2. Specifications
 | Behavior | Input | Output |
 | :--------| :---- | :------|
+| The user can access the Landing Page (Index) | click IIS Express | "Welcome to my webpage..." |
+| The user can navigate to the About Page | click About link | "About Me..." |
+| The user can navigate to the Projects Page | click Projects link | "Here are some of my projects..."
+| The user can access some of my Projects | click Project link | Displays Github repository |
+| The user can navigate to the FavoriteThings Page | click Things link | "These are a few of my favorite things..."|
+| The user can navigate to the FavoritePeople Page | click People link | "These are some of my favorite people..." |
+| The user can navigate to the FavoritePet Page | click Pet link | "This is Pockets! He's pretty great...'"
+| *Stretch Goals* | | |
+| The user can navigate to the Guestbook Page | click Sign My Guestbook | "Please enter your info..." |
+| The user can sign the Guestbook Page and become a registered user | "Andrew", "Dalton", "expandrew@gmail", "9713400641"| "Thanks for signing the Guestbook, would you like to log in?" |
+| The user can use their Guest Info to log into the website | "expandrew@gmail", " password " | "Welcome expandrew@gmail!"|
+| The user can navigate to the Suggestion Page | click Make a Suggestion | "Make a suggestion..." |
+| The user can make a Suggestion | "You should work on..." | "Thanks for the suggestion! Come back again sometime!" |
 
 3. Integration
-  * Initial routes or index pages with all dependencies in Controller/index.html head
-  * Template/html page for ...
-  * Template/html page for ...
-  * Template/html page for ... (one for each route/integrated user story)
-  * Display...
-  * Integrate feature that...
-
+  * Index, our Landing Page
+  * About, a page about ME!
+	*
 4. UX/UI
   * Include and modify bootstrap/materialize/Sass etc.
   * Develop custom style
@@ -57,28 +60,35 @@ This Web Application has been built to provide inquiring minds with a whole lot 
 
 ## Setup/Installation Requirements
 
-* _This is a great place_
-* _to list setup instructions_
-* _in a simple_
-* _easy-to-understand_
-* _format_
-
-_{Leave nothing to chance! You want it to be easy for potential users, employers and collaborators to run your app. Do I need to run a server? How should I set up my databases? Is there other code this app depends on?}_
+*Open your console or powershell command line.
+*In your command line, navigate to the desktop or your desired folder destination.
+*Copy the project's github address (https://github.com/drewlinn/SonOfCod.git)
+*Write in your console the command "git clone" and paste the project address afterward and press enter.
+*Open the project using Visual Studio.
+*Right click on the project in the Solution Explorer Pane and click "Build".
+*Use your console to navigate to the "SonOfCod/src/SonOfCod".
+*In the Command Line, type the command "dotnet ef database update".
+*Once this process is complete, in Visual Studio, click on the button in the tool bar with the green PLAY SYMBOL that says "IIS EXPRESS" next to it.
+*Your default web browser should open and navigate to the designated localhost automatically.
+*The application should be displayed in your browser with full functionality.
 
 ## Known Bugs
 
-_{Are there issues that have not yet been resolved that you want to let users know you know?  Outline any issues that would impact use of your application.  Share any workarounds that are in place. }_
+There are no known issues at this time.
 
 ## Support and contact details
 
-_{Let people know what to do if they run into any issues or have questions, ideas or concerns.  Encourage them to contact you or make a contribution to the code.}_
+If you notice any bugs in my program or any other issues with my code, please email me at expandrew@gmail.com
 
 ## Technologies Used
 
-_{Tell me about the languages and tools you used to create this app. Assume that I know you probably used HTML and CSS. If you did something really cool using only HTML, point that out.}_
+*HTML 
+*CSS 
+*C# 
+*Visual Studio 2015
 
 ### License
 
-*{Determine the license under which this application can be used.  See below for more details on licensing.}*
+*This Software is Licensed under the MIT License*
 
-Copyright (c) 2016 **_{Andrew Dalton, Epicodus}_**
+Copyright (c) 2016 **Andrew Dalton, Epicodus**
