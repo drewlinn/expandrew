@@ -74,7 +74,7 @@ This Web Application has been built to provide inquiring minds with a whole lot 
 
 ## Known Bugs
 
-There are no known issues at this time.
+Currently having issues with accessing the response data from our Github API call.
 
 ## Support and contact details
 
