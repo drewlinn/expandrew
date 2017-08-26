@@ -84,15 +84,15 @@ namespace expandrew.Models
         public static List<Project> GetProjects()
         {
             var client = new RestClient("https://api.github.com/");
-            var request = new RestRequest("users/drewlinn/repos", Method.GET);
-            client.Authenticator = new HttpBasicAuthenticator("drewlinn", "9999c0a2d5af9ac8cf1e47403cd8a09b907ef8ca");
+            var request = new RestRequest("users/" + EnvironmentVariables.AccountSid + "/repos", Method.GET);
+            client.Authenticator = new HttpBasicAuthenticator(EnvironmentVariables.AccountSid, EnvironmentVariables.AuthToken);
             var response = new RestResponse();
             Task.Run(async () =>
             {
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
             JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
-            var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse["messages"].ToString());
+            var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse["projects"].ToString());
             return projectList;
         }
 
