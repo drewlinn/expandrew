@@ -37,44 +37,44 @@ This Web Application has been built to provide inquiring minds with a whole lot 
 | The user can access some of my Projects | click Project link | Displays Github repository |
 | The user can navigate to the FavoriteThings Page | click Things link | "These are a few of my favorite things..."|
 | The user can navigate to the FavoritePeople Page | click People link | "These are some of my favorite people..." |
-| The user can navigate to the FavoritePet Page | click Pet link | "This is Pockets! He's pretty great...'"
-| *Stretch Goals* | | |
-| The user can navigate to the Guestbook Page | click Sign My Guestbook | "Please enter your info..." |
-| The user can sign the Guestbook Page and become a registered user | "Andrew", "Dalton", "expandrew@gmail", "9713400641"| "Thanks for signing the Guestbook, would you like to log in?" |
-| The user can use their Guest Info to log into the website | "expandrew@gmail", " password " | "Welcome expandrew@gmail!"|
-| The user can navigate to the Suggestion Page | click Make a Suggestion | "Make a suggestion..." |
-| The user can make a Suggestion | "You should work on..." | "Thanks for the suggestion! Come back again sometime!" |
+| The user can navigate to the FavoritePet Page | click Pet link | "This is Pockets! He's pretty great...'" |
 
 3. Integration
-  * Index, our Landing Page
-  * About, a page about ME!
-	*
-4. UX/UI
-  * Include and modify bootstrap/materialize/Sass etc.
-  * Develop custom style
+  * HomeController - for routing and file integration.
+  * Project.cs - our Project Model.
+  * Owner.cs - A model for a Repository Owner.
+  * Index.cshtml - our Landing Page.
+  * About.cshtml - a page about ME!
+  * Contact.cshtml - a page for information about getting in touch with me.
+  * People.cshtml - a page about my favorite people.
+  * Pet.cshtml - a page about my cat, Pockets!
+  * Places.cshtml - a page about my favorite places.
+  * Projects.cshtml - a page about my favorite places.
+  * Things.cshtml - a page about my favorite things.
 
-5. Polish
-  * Refactor minor portion of...
-  * Delete unused...
-  * Make README awesome
 
 ## Setup/Installation Requirements
 
-*Open your console or powershell command line.
-*In your command line, navigate to the desktop or your desired folder destination.
-*Copy the project's github address (https://github.com/drewlinn/expandrew.git)
-*Write in your console the command "git clone" and paste the project address afterward and press enter.
-*Open the project using Visual Studio.
-*Right click on the project in the Solution Explorer Pane and click "Build".
-*Use your console to navigate to the "expandrew/src/expandrew".
-*In the Command Line, type the command "dotnet ef database update".
-*Once this process is complete, in Visual Studio, click on the button in the tool bar with the green PLAY SYMBOL that says "IIS EXPRESS" next to it.
-*Your default web browser should open and navigate to the designated localhost automatically.
-*The application should be displayed in your browser with full functionality.
+* Open your console or powershell command line.
+* In your command line, navigate to the desktop or your desired folder destination.
+* Copy the project's github address (https://github.com/drewlinn/expandrew.git)
+* Write in your console the command "git clone" and paste the project address afterward and press enter.
+* Log in to Github. From the drop down menu next to your user portrait click, 'Settings', and under the 'Developer Settings' category, click 'Personal Access Tokens'. Then click 'Generate New Token'. Select your desired Scope settings, and optionally enter a description. Then click 'Generate Token'.
+* Open the project using Visual Studio. 
+* Create a Class file in the project directory called 'EnvironmentVariables'.
+* Insert the following lines of code in the EnvironmentVariables Class:
+		public static string AccountSid = "YourGithubUserName";
+        public static string AuthToken = "YOUR-API-KEY-GOES-HERE";
+        public static string GitHubUserAgent = "User-Agent: "YourGithubUserName";"
+	Then save the file.
+* Right click on the project in the Solution Explorer Pane and click "Build".
+* Once this process is complete, in Visual Studio, click on the button in the tool bar with the green PLAY SYMBOL that says "IIS EXPRESS" next to it.
+* Your default web browser should open and navigate to the designated localhost automatically.
+* The application should be displayed in your browser and operate with full functionality.
 
 ## Known Bugs
 
-Currently having issues with accessing the response data from our Github API call.
+None currently known.
 
 ## Support and contact details
 
