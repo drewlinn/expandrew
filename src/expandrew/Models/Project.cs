@@ -84,16 +84,18 @@ namespace expandrew.Models
         public static List<Project> GetProjects()
         {
             var client = new RestClient("https://api.github.com/");
-            var request = new RestRequest("users/" + EnvironmentVariables.AccountSid + "/repos", Method.GET);
-            client.Authenticator = new HttpBasicAuthenticator(EnvironmentVariables.AccountSid, EnvironmentVariables.AuthToken);
+            var request = new RestRequest("users/drewlinn/repos?" + "client_id=" + EnvironmentVariables.AccountSid + "&client_secret=" + EnvironmentVariables.AuthToken, Method.GET);
+            //client.Authenticator = new HttpBasicAuthenticator(EnvironmentVariables.AccountSid, EnvironmentVariables.AuthToken);
+            request.AddHeader("user-agent", EnvironmentVariables.GitHubUserAgent);
+            request.AddHeader("Accept", "application/json");
             var response = new RestResponse();
             Task.Run(async () =>
             {
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
-            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
-            var projectList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse["projects"].ToString());
-            return projectList;
+            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Non-Public.content);
+            var messageList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse["messages"].ToString());
+            return messageList;
         }
 
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
