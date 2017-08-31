@@ -84,7 +84,7 @@ namespace expandrew.Models
         public static List<Project> GetProjects()
         {
             var client = new RestClient("https://api.github.com/");
-            var request = new RestRequest("users/drewlinn/repos?" + "client_id=" + EnvironmentVariables.AccountSid + "&client_secret=" + EnvironmentVariables.AuthToken, Method.GET);
+            var request = new RestRequest("/search/repositories?q=user:" + EnvironmentVariables.AccountSid  + "&sort=stars&order=desc" + "&client_secret=" + EnvironmentVariables.AuthToken, Method.GET);
             //client.Authenticator = new HttpBasicAuthenticator(EnvironmentVariables.AccountSid, EnvironmentVariables.AuthToken);
             request.AddHeader("user-agent", EnvironmentVariables.GitHubUserAgent);
             request.AddHeader("Accept", "application/json");
@@ -93,9 +93,10 @@ namespace expandrew.Models
             {
                 response = await GetResponseContentAsync(client, request) as RestResponse;
             }).Wait();
-            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Non-Public.content);
-            var messageList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse["messages"].ToString());
-            return messageList;
+            JObject jsonResponse = JsonConvert.DeserializeObject<JObject>(response.Content);
+            var itemList = JsonConvert.DeserializeObject<List<Project>>(jsonResponse["items"].ToString());
+            var topThree = new List<Project>(itemList.Take(3));
+            return topThree;
         }
 
         public static Task<IRestResponse> GetResponseContentAsync(RestClient theClient, RestRequest theRequest)
